@@ -1,0 +1,8 @@
+name: sentrysem
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.11
+  - pip=25.0.1
+  - pip:
+      - -e .[dev,raw]

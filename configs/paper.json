@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "experiment_name": "SentrySem paper reproduction",
+  "base_seed": 20260907,
+  "execution_device": "cpu",
+  "paths": {
+    "frozen_inputs": "artifacts/frozen_inputs",
+    "reference_results": "results/paper",
+    "generated_results": "results/generated",
+    "generated_figures": "figures/generated"
+  },
+  "encoder": {
+    "architecture": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "embedding_dimension": 512,
+    "input_size": 128,
+    "resize_interpolation": "bilinear",
+    "resize_antialias": true,
+    "normalization_mean": [0.485, 0.456, 0.406],
+    "normalization_std": [0.229, 0.224, 0.225],
+    "l2_normalize": true,
+    "expected_parameter_count": 11176512,
+    "expected_state_sha256": "d7ecbcb063a266bf46ab86ce4e0d141732ba0d286c3fb25a8d55783bda06e41e"
+  },
+  "data": {
+    "dataset": "CIFAR10",
+    "development_cache_per_class": 100,
+    "calibration_tune_per_class": 50,
+    "calibration_validate_per_class": 50,
+    "evaluation_holdout_skip_per_class": 200,
+    "evaluation_cache_per_class": 100,
+    "evaluation_query_per_class": 50,
+    "novel_query_per_class": 20,
+    "wire_id_offset": 1000000
+  },
+  "views": {
+    "standard": {
+      "reflection_pad": 3,
+      "horizontal_flip_probability": 0.5,
+      "brightness_range": [0.9, 1.1],
+      "contrast_range": [0.9, 1.1],
+      "noise_standard_deviation_pixels": 2.0
+    },
+    "strong": {
+      "reflection_pad": 5,
+      "horizontal_flip_probability": 0.5,
+      "rotation_degrees": [-12.0, 12.0],
+      "rotation_interpolation": "bilinear",
+      "rotation_fill": "post-crop-channel-mean-uint8",
+      "brightness_range": [0.75, 1.25],
+      "contrast_range": [0.75, 1.25],
+      "noise_standard_deviation_pixels": 6.0
+    },
+    "operation_order": [
+      "reflect-pad-and-integer-crop",
+      "horizontal-flip",
+      "rotation-for-strong-view",
+      "brightness",
+      "contrast",
+      "additive-gaussian-noise",
+      "clip-and-cast-to-uint8"
+    ]
+  },
+  "calibration": {
+    "proposal_signs": 64,
+    "percentile_start": 0.05,
+    "percentile_stop": 0.95,
+    "percentile_points": 91,
+    "minimum_selected_pairs": 200,
+    "tune_precision_target": 0.95,
+    "validation_wilson_lower_target": 0.9,
+    "threshold": 0.7717004776000975
+  },
+  "protocol": {
+    "alpha": 0.01,
+    "bsc_probabilities": [0.0, 0.05],
+    "proposal_signs": 256,
+    "audit_signs": 768,
+    "proposal_tie_break": "lowest-cache-index",
+    "strict_reuse_threshold": true,
+    "sequential": {
+      "proposal_signs": 64,
+      "audit_batch_signs": 128,
+      "audit_max_signs_per_candidate": 768,
+      "maximum_candidates": 3,
+      "alternative_grid_points": 8,
+      "alpha_weights": [4, 2, 1]
+    }
+  },
+  "traffic": {
+    "frame_overhead_bytes": 18,
+    "candidate_lock_payload_bytes": 16,
+    "audit_seed_payload_bytes": 8,
+    "feedback_payload_bytes": 1,
+    "refresh_feature_values": 512,
+    "refresh_value_bits": 8,
+    "refresh_scale_bits": 32,
+    "expected_prefallback_bits": 1944,
+    "expected_refresh_bits": 4272
+  },
+  "allocation": {
+    "total_signs": 1024,
+    "candidate_splits": [
+      [128, 896],
+      [256, 768],
+      [384, 640],
+      [512, 512],
+      [640, 384],
+      [768, 256],
+      [896, 128]
+    ],
+    "tune_protocol_seeds": [
+      4108815543219190477,
+      7915450270055424108,
+      14611438597939087046,
+      17838361416203552926,
+      15742982603362453269
+    ],
+    "evaluation_protocol_seeds": [
+      13181815969110816250,
+      14673129866313320424,
+      13231421562932395684,
+      5635005200607147554,
+      17148364466832244007
+    ]
+  },
+  "comparators": {
+    "protocol_seeds": [
+      4108815543219190477,
+      7915450270055424108,
+      14611438597939087046,
+      17838361416203552926,
+      15742982603362453269
+    ],
+    "methods": [
+      "nearest-neighbor-64",
+      "same-evidence-512",
+      "bonferroni-512",
+      "fixed-256-256",
+      "same-evidence-1024",
+      "bonferroni-1024",
+      "fixed-512-512",
+      "sequential-1",
+      "sequential-3",
+      "always-refresh"
+    ]
+  },
+  "uncertainty": {
+    "cluster_bootstrap_trials": 2000,
+    "primary_bootstrap_seed": 929331,
+    "comparator_bootstrap_seed": 777311,
+    "confidence_level": 0.95,
+    "seed_standard_deviation_ddof": 1
+  },
+  "stress": {
+    "half_cache_seed": 20260908,
+    "missing_classes": [0, 1, 2],
+    "conditions": [
+      ["full", "paired_iid"],
+      ["evict50", "paired_iid"],
+      ["missing3classes", "paired_iid"],
+      ["full", "paired_hard_ood"],
+      ["full", "novel_unpaired"]
+    ]
+  },
+  "expected": {
+    "frozen_embeddings_sha256": "77173ff70b1fbe318219692771120ade7aa430fc2a0683b82f25a486631d88a0",
+    "calibration_sha256": "94aae0e166c7181c87dd3911ae9c44378820e39f70ecc188581ee1ef19720cdb",
+    "audit_boundaries": {"0.0": 141, "0.05": 162},
+    "audit_boundary_null_probabilities": {
+      "0.0": 0.008307522884450153,
+      "0.05": 0.009719658202633178
+    },
+    "primary": {
+      "0.0": {
+        "reuse_rate": 0.868,
+        "identity_precision_among_reuses": 0.9972285628149361,
+        "mean_completion_bits": 2507.904,
+        "saving_vs_always_refresh": 0.4129438202247191,
+        "bad_reuse_rate": 0.0
+      },
+      "0.05": {
+        "reuse_rate": 0.8304,
+        "identity_precision_among_reuses": 0.9971022892165655,
+        "mean_completion_bits": 2668.5312,
+        "saving_vs_always_refresh": 0.3753438202247191,
+        "bad_reuse_rate": 0.0
+      }
+    },
+    "selection_bias_counts": {
+      "trials_per_point": 10000,
+      "same_evidence": {"1": 47, "8": 414, "64": 2515},
+      "fresh_audit": {"1": 57, "8": 50, "64": 45}
+    },
+    "sequential_null_counts": {
+      "trials_per_channel": 50000,
+      "0.0": 44,
+      "0.05": 52
+    }
+  }
+}

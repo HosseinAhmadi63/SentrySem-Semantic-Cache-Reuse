@@ -1,0 +1,26 @@
+[
+  {
+    "candidates": 1,
+    "bits": 64,
+    "naive_reuse_false_accept_rate": 0.0047,
+    "fresh_false_accept_rate": 0.0057,
+    "target_alpha": 0.01,
+    "trials": 10000
+  },
+  {
+    "candidates": 8,
+    "bits": 64,
+    "naive_reuse_false_accept_rate": 0.0414,
+    "fresh_false_accept_rate": 0.005,
+    "target_alpha": 0.01,
+    "trials": 10000
+  },
+  {
+    "candidates": 64,
+    "bits": 64,
+    "naive_reuse_false_accept_rate": 0.2515,
+    "fresh_false_accept_rate": 0.0045,
+    "target_alpha": 0.01,
+    "trials": 10000
+  }
+]

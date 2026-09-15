@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "validation_command": "python main.py verify",
+  "test_command": "python -m pytest",
+  "tests_passed": 20,
+  "frozen_inputs": {
+    "embedding_archive_sha256": "77173ff70b1fbe318219692771120ade7aa430fc2a0683b82f25a486631d88a0",
+    "calibration_sha256": "94aae0e166c7181c87dd3911ae9c44378820e39f70ecc188581ee1ef19720cdb",
+    "encoder_state_sha256": "d7ecbcb063a266bf46ab86ce4e0d141732ba0d286c3fb25a8d55783bda06e41e"
+  },
+  "experimental_contract": {
+    "calibrated_cosine_threshold": 0.7717004776000975,
+    "verifier_alpha": 0.01,
+    "selected_proposal_signs": 256,
+    "selected_audit_signs": 768,
+    "protocol_bits_before_fallback": 1944,
+    "feature_refresh_bits": 4272,
+    "comparator_sessions": 50000,
+    "stress_sessions": 22000,
+    "paper_figures": 7
+  },
+  "primary_results": {
+    "bsc_0": {
+      "reuse_rate": 0.868,
+      "source_instance_precision": 0.9972285628149361,
+      "mean_completion_bits": 2507.904,
+      "traffic_reduction": 0.4129438202247191,
+      "bad_reuse_rate": 0.0
+    },
+    "bsc_0_05": {
+      "reuse_rate": 0.8304,
+      "source_instance_precision": 0.9971022892165655,
+      "mean_completion_bits": 2668.5312,
+      "traffic_reduction": 0.3753438202247191,
+      "bad_reuse_rate": 0.0
+    }
+  }
+}

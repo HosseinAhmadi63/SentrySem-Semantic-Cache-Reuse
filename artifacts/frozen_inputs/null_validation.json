@@ -1,0 +1,58 @@
+[
+  {
+    "bsc": 0.0,
+    "trials": 50000,
+    "familywise_false_accepts": 44,
+    "familywise_false_accept_rate": 0.00088,
+    "familywise_wilson95": [
+      0.0006556364877063338,
+      0.0011810515774761713
+    ],
+    "target_familywise_alpha": 0.01,
+    "alpha_allocations": [
+      0.005714285714285714,
+      0.002857142857142857,
+      0.0014285714285714286
+    ],
+    "attempted": [
+      50000,
+      49975,
+      49962
+    ],
+    "accepted": [
+      25,
+      13,
+      6
+    ],
+    "mean_total_audit_bits": 1909.248,
+    "fresh_independent_attempts": true
+  },
+  {
+    "bsc": 0.05,
+    "trials": 50000,
+    "familywise_false_accepts": 52,
+    "familywise_false_accept_rate": 0.00104,
+    "familywise_wilson95": [
+      0.0007932309947873239,
+      0.001363432486947455
+    ],
+    "target_familywise_alpha": 0.01,
+    "alpha_allocations": [
+      0.005714285714285714,
+      0.002857142857142857,
+      0.0014285714285714286
+    ],
+    "attempted": [
+      50000,
+      49972,
+      49961
+    ],
+    "accepted": [
+      28,
+      11,
+      13
+    ],
+    "mean_total_audit_bits": 1944.38144,
+    "fresh_independent_attempts": true
+  }
+]

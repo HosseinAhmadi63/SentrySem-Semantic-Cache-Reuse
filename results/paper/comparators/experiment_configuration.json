@@ -1,0 +1,48 @@
+{
+  "input_artifact_directory": "inputs",
+  "input_embeddings": "frozen_embeddings.npz",
+  "input_embeddings_sha256": "77173ff70b1fbe318219692771120ade7aa430fc2a0683b82f25a486631d88a0",
+  "input_calibration": "calibration.json",
+  "input_calibration_sha256": "94aae0e166c7181c87dd3911ae9c44378820e39f70ecc188581ee1ef19720cdb",
+  "experiment_script_sha256": "059e4bbaec0955e37e10dac25b8f2e056db768b33be009687efc86186e3c9699",
+  "environment": {
+    "python": "3.12.11 (main, Sep 18 2025, 19:41:45) [Clang 20.1.4 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.1"
+  },
+  "threshold_cosine_frozen": 0.7717004776000975,
+  "protocol_seeds": [
+    4108815543219190477,
+    7915450270055424108,
+    14611438597939087046,
+    17838361416203552926,
+    15742982603362453269
+  ],
+  "bsc_values": [
+    0.0,
+    0.05
+  ],
+  "bank_size": 1000,
+  "paired_iid_queries": 500,
+  "common_fallback": "reliable framed int8 512-D source-embedding semantic refresh",
+  "common_fallback_bits": 4272,
+  "logical_frame_overhead_bits": 144,
+  "reliable_control_and_fallback_assumption": true,
+  "physical_fec_cost_included": false,
+  "embedding_or_model_training": false,
+  "fallback_is_cache_identity_output": false,
+  "endpoint_note": "A rejected cache reuse is completed by delivering the source semantic representation itself; cache-identity precision is reported only for reuse.",
+  "method_order": [
+    "proposal64_unverified",
+    "screened512_heuristic",
+    "bonferroni512",
+    "split256_256",
+    "screened1024_heuristic",
+    "bonferroni1024",
+    "split512_512",
+    "sentrysem1",
+    "sentrysem3",
+    "int8_fallback"
+  ]
+}

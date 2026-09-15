@@ -1,0 +1,146 @@
+[
+  {
+    "test": "split256_256",
+    "bsc": 0.0,
+    "boundary": 40,
+    "exact_boundary_null_probability": 0.007289693379133514,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "split512_512",
+    "bsc": 0.0,
+    "boundary": 90,
+    "exact_boundary_null_probability": 0.008624518674130315,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "screened512_heuristic",
+    "bsc": 0.0,
+    "boundary": 90,
+    "single_fixed_candidate_null_probability": 0.008624518674130315,
+    "formal_post_selection_certificate": false,
+    "pass": true,
+    "note": "Search and screening reuse the same sketch. The single-candidate p-value is selection-biased and is reported only as a heuristic baseline."
+  },
+  {
+    "test": "bonferroni512",
+    "bsc": 0.0,
+    "cache_candidates": 1000,
+    "boundary": 73,
+    "exact_per_candidate_null_probability": 6.9878157941162465e-06,
+    "union_bound": 0.006987815794116246,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "screened1024_heuristic",
+    "bsc": 0.0,
+    "boundary": 193,
+    "single_fixed_candidate_null_probability": 0.00845856452439742,
+    "formal_post_selection_certificate": false,
+    "pass": true,
+    "note": "Search and screening reuse the same sketch. The single-candidate p-value is selection-biased and is reported only as a heuristic baseline."
+  },
+  {
+    "test": "bonferroni1024",
+    "bsc": 0.0,
+    "cache_candidates": 1000,
+    "boundary": 169,
+    "exact_per_candidate_null_probability": 8.60651022193878e-06,
+    "union_bound": 0.008606510221938781,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "sentrysem1",
+    "bsc": 0.0,
+    "boundary_trials": 50000,
+    "boundary_false_acceptance": 0.0013,
+    "claimed_upper_bound": 0.01,
+    "pass": true,
+    "note": "Monte Carlo screen; the formal guarantee follows from the e-process and alpha spending."
+  },
+  {
+    "test": "sentrysem3",
+    "bsc": 0.0,
+    "boundary_trials": 50000,
+    "boundary_false_acceptance": 0.00096,
+    "claimed_upper_bound": 0.01,
+    "pass": true,
+    "note": "Monte Carlo screen; the formal guarantee follows from the e-process and alpha spending."
+  },
+  {
+    "test": "split256_256",
+    "bsc": 0.05,
+    "boundary": 47,
+    "exact_boundary_null_probability": 0.00922862518491879,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "split512_512",
+    "bsc": 0.05,
+    "boundary": 103,
+    "exact_boundary_null_probability": 0.007743199725327457,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "screened512_heuristic",
+    "bsc": 0.05,
+    "boundary": 103,
+    "single_fixed_candidate_null_probability": 0.007743199725327457,
+    "formal_post_selection_certificate": false,
+    "pass": true,
+    "note": "Search and screening reuse the same sketch. The single-candidate p-value is selection-biased and is reported only as a heuristic baseline."
+  },
+  {
+    "test": "bonferroni512",
+    "bsc": 0.05,
+    "cache_candidates": 1000,
+    "boundary": 86,
+    "exact_per_candidate_null_probability": 9.220771826307109e-06,
+    "union_bound": 0.009220771826307109,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "screened1024_heuristic",
+    "bsc": 0.05,
+    "boundary": 221,
+    "single_fixed_candidate_null_probability": 0.009671345130911233,
+    "formal_post_selection_certificate": false,
+    "pass": true,
+    "note": "Search and screening reuse the same sketch. The single-candidate p-value is selection-biased and is reported only as a heuristic baseline."
+  },
+  {
+    "test": "bonferroni1024",
+    "bsc": 0.05,
+    "cache_candidates": 1000,
+    "boundary": 195,
+    "exact_per_candidate_null_probability": 8.222369516392296e-06,
+    "union_bound": 0.008222369516392295,
+    "claimed_upper_bound": 0.01,
+    "pass": true
+  },
+  {
+    "test": "sentrysem1",
+    "bsc": 0.05,
+    "boundary_trials": 50000,
+    "boundary_false_acceptance": 0.00136,
+    "claimed_upper_bound": 0.01,
+    "pass": true,
+    "note": "Monte Carlo screen; the formal guarantee follows from the e-process and alpha spending."
+  },
+  {
+    "test": "sentrysem3",
+    "bsc": 0.05,
+    "boundary_trials": 50000,
+    "boundary_false_acceptance": 0.001,
+    "claimed_upper_bound": 0.01,
+    "pass": true,
+    "note": "Monte Carlo screen; the formal guarantee follows from the e-process and alpha spending."
+  }
+]

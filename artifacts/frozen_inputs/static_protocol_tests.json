@@ -1,0 +1,15 @@
+{
+  "frame_bytes": 26,
+  "random_plane_empirical": 0.33318,
+  "random_plane_expected": 0.3333333333333333,
+  "fixed_boundary": 3,
+  "alpha_allocations": [
+    0.005714285714285714,
+    0.002857142857142857,
+    0.0014285714285714286
+  ],
+  "commitment_binds_session_attempt_verifier": true,
+  "logical_frame_overhead_bytes": 18,
+  "one_round_expected_bytes": 139,
+  "malformed_trace_tests": 2
+}

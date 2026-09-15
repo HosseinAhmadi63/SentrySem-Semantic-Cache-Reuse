@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Environments
+.venv/
+venv/
+.conda/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Downloaded upstream data and model caches
+data/cache/
+data/raw/
+artifacts/downloads/
+
+# Generated outputs
+artifacts/generated_inputs/
+results/generated/
+results/smoke/
+figures/generated/
+
+# Local logs and temporary files
+*.log
+*.tmp
+*.temp

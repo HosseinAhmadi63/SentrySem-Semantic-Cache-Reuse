@@ -1,0 +1,41 @@
+{
+  "source": "CIFAR-10 paired evolving views",
+  "classes": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "sizes": {
+    "dev_bank": 1000,
+    "cal_tune": 500,
+    "cal_validate": 500,
+    "test_bank": 1000,
+    "paired_iid": 500,
+    "paired_hard_ood": 500,
+    "novel_unpaired": 200
+  },
+  "sha256_images_labels_ids": {
+    "dev_bank": "160425fc6dafb34efb6102fed1f789911c3d83a7231967a72ee05b759cdaabbc",
+    "cal_tune": "570c8c8377aef7a1e041529966ddf7fe9dac1611f9a00e92beee144f6efd9874",
+    "cal_validate": "ee7cb1cf6e4ec86b03a83a843da83b2b58a33483cf92b925960256e8ad359349",
+    "test_bank": "8063df14e5ee55c1b356efff9d7a4c7cf746f4ded497b8dd15a739b31749615f",
+    "paired_iid": "a8e9cf93afb79a4981868335d63823ed906e83867c8776b6f72a154cf4635f46",
+    "paired_hard_ood": "3649f346b5d007ef13e082ee9bee6615cbe7e831164d5866462eb0f76531b497",
+    "novel_unpaired": "3fb018a64510255b2686328cfbcc40c51666b2a25cd4b273ceedcd7bb514b781"
+  },
+  "calibration_query_identities_disjoint": true,
+  "development_and_final_cifar_splits_disjoint": true,
+  "final_holdout_skip_per_class": 200,
+  "final_conditions": [
+    "paired_iid",
+    "paired_hard_ood",
+    "novel_unpaired"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "selection_data": "CAL-TUNE against development cache only",
+  "evaluation_pool_used_for_selection": false,
+  "candidate_ratios": [
+    {
+      "search_bits": 128,
+      "audit_bits": 896
+    },
+    {
+      "search_bits": 256,
+      "audit_bits": 768
+    },
+    {
+      "search_bits": 384,
+      "audit_bits": 640
+    },
+    {
+      "search_bits": 512,
+      "audit_bits": 512
+    },
+    {
+      "search_bits": 640,
+      "audit_bits": 384
+    },
+    {
+      "search_bits": 768,
+      "audit_bits": 256
+    },
+    {
+      "search_bits": 896,
+      "audit_bits": 128
+    }
+  ],
+  "selection_rule": "minimum mean fallback-inclusive logical bits averaged equally over BSC p=0 and p=.05; ties favor the most balanced split",
+  "selected_search_bits": 256,
+  "selected_audit_bits": 768,
+  "selected_cal_tune_mean_cost_across_channels": 2674.5119999999997,
+  "fixed_prefallback_protocol_bits": 1944,
+  "cal_tune_protocol_seeds": [
+    4108815543219190477,
+    7915450270055424108,
+    14611438597939087046,
+    17838361416203552926,
+    15742982603362453269
+  ],
+  "evaluation_protocol_seeds": [
+    13181815969110816250,
+    14673129866313320424,
+    13231421562932395684,
+    5635005200607147554,
+    17148364466832244007
+  ],
+  "protocol_seed_sets_disjoint": true,
+  "formal_alpha": 0.01,
+  "common_semantic_refresh_bits": 4272,
+  "input_artifact_directory": "inputs",
+  "input_embeddings_sha256": "77173ff70b1fbe318219692771120ade7aa430fc2a0683b82f25a486631d88a0",
+  "input_calibration_sha256": "94aae0e166c7181c87dd3911ae9c44378820e39f70ecc188581ee1ef19720cdb",
+  "script_sha256": "cdc896ef78c4dcf7097528a091579eb21c8571edd2eaa547d881ec4f4b5b55d4",
+  "environment": {
+    "python": "3.12.11 (main, Sep 18 2025, 19:41:45) [Clang 20.1.4 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.1"
+  }
+}

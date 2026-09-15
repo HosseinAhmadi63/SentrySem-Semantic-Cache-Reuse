@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "reference": "selected_ratio_final_aggregate.json",
+  "same_seed_realizations": true,
+  "note": "Both evaluation paths draw exactly 256 proposal/channel values and 768 audit uniforms per query for the frozen selected ratio.",
+  "checks": [
+    {
+      "bsc": 0.0,
+      "metrics": {
+        "reuse_rate": [
+          0.868,
+          0.868
+        ],
+        "bad_reuse_rate": [
+          0.0,
+          0.0
+        ],
+        "identity_precision_among_reuses": [
+          0.9972285628149361,
+          0.9972285628149361
+        ],
+        "mean_completion_bits": [
+          2507.904,
+          2507.904
+        ]
+      },
+      "pass": true
+    },
+    {
+      "bsc": 0.05,
+      "metrics": {
+        "reuse_rate": [
+          0.8304,
+          0.8304
+        ],
+        "bad_reuse_rate": [
+          0.0,
+          0.0
+        ],
+        "identity_precision_among_reuses": [
+          0.9971022892165655,
+          0.9971022892165655
+        ],
+        "mean_completion_bits": [
+          2668.5312,
+          2668.5312
+        ]
+      },
+      "pass": true
+    }
+  ]
+}

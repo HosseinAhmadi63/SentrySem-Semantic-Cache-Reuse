@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "experiment_name": "SentrySem installation smoke test",
+  "base_seed": 20260907,
+  "execution_device": "cpu",
+  "paths": {
+    "frozen_inputs": "artifacts/frozen_inputs",
+    "reference_results": "results/paper",
+    "generated_results": "results/smoke",
+    "generated_figures": "figures/generated"
+  },
+  "protocol": {
+    "alpha": 0.01,
+    "bsc_probabilities": [0.0, 0.05],
+    "proposal_signs": 256,
+    "audit_signs": 768,
+    "proposal_tie_break": "lowest-cache-index",
+    "strict_reuse_threshold": true
+  },
+  "traffic": {
+    "frame_overhead_bytes": 18,
+    "candidate_lock_payload_bytes": 16,
+    "audit_seed_payload_bytes": 8,
+    "feedback_payload_bytes": 1,
+    "refresh_feature_values": 512,
+    "refresh_value_bits": 8,
+    "refresh_scale_bits": 32,
+    "expected_prefallback_bits": 1944,
+    "expected_refresh_bits": 4272
+  },
+  "smoke": {
+    "queries": 20,
+    "cache_entries": 50,
+    "protocol_seeds": [4108815543219190477]
+  },
+  "expected": {
+    "frozen_embeddings_sha256": "77173ff70b1fbe318219692771120ade7aa430fc2a0683b82f25a486631d88a0",
+    "calibration_sha256": "94aae0e166c7181c87dd3911ae9c44378820e39f70ecc188581ee1ef19720cdb",
+    "threshold": 0.7717004776000975,
+    "audit_boundaries": {"0.0": 141, "0.05": 162}
+  }
+}

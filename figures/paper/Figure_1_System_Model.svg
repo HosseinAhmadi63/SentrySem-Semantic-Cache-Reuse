@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="345.59999999999997" height="267.84000000000003" preserveAspectRatio="xMinYMin meet" viewBox="0 0 345 267" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>SentrySem system model and protocol sequence</title>
+	<desc>Vector figure for the SentrySem paper: SentrySem system model and protocol sequence.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="345.59999999999997" height="267.84000000000003"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-267)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="235.93880000000001" y="255.84000000000003" style="font-family: Helvetica; font-size: 6.3px;fill: rgb(40%,40%,40%); stroke:none;" transform="translate(0,511) scale(1,-1)">protocol time</text>
+			<path d="M 278,257.84 L 336,257.84 Z" style="stroke: rgb(40%,40%,40%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="336 257.84, 331 255.34, 331 260.34" style="stroke: rgb(40%,40%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(40%,40%,40%); fill-rule: evenodd;"/>
+			<rect x="8" y="159" width="329.59999999999997" height="82" rx="7" ry="7" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(91%,94%,97%); fill-rule: evenodd;"/>
+			<rect x="8" y="61" width="329.59999999999997" height="82" rx="7" ry="7" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(92%,96%,94%); fill-rule: evenodd;"/>
+			<text x="16" y="228" style="font-family: Helvetica-Bold; font-size: 7.4px;fill: rgb(12%,35%,52%); stroke:none;" transform="translate(0,456) scale(1,-1)">TRANSMITTER (Tx)</text>
+			<text x="16" y="130" style="font-family: Helvetica-Bold; font-size: 7.4px;fill: rgb(18%,49%,35%); stroke:none;" transform="translate(0,260) scale(1,-1)">RECEIVER (Rx)</text>
+			<rect x="20" y="178" width="66" height="38" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="25.8659" y="205" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,410) scale(1,-1)">Semantic encoder</text>
+			<text x="41.663" y="195" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,390) scale(1,-1)">source x</text>
+			<text x="53.0" y="187" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,374) scale(1,-1)"></text>
+			<text x="32.248099999999994" y="184" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,368) scale(1,-1)">normalized </text>
+			<text x="63.256099999999996" y="184" style="font-family: Times-BoldItalic; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,368) scale(1,-1)">u</text>
+			<text x="66.7589" y="184" style="font-family: Times-Italic; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,368) scale(1,-1)">(x)</text>
+			<rect x="103" y="178" width="65" height="38" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="111.16624999999999" y="205" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,410) scale(1,-1)">Proposal sketch</text>
+			<text x="117.494" y="195" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,390) scale(1,-1)">random signs</text>
+			<text x="135.5" y="187" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,374) scale(1,-1)"></text>
+			<text x="123.539952" y="184" style="font-family: Times-Italic; font-size: 6.5px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,368) scale(1,-1)">m</text>
+			<text x="128.232952" y="182.2" style="font-family: Times-Italic; font-size: 4.536px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,364) scale(1,-1)">P</text>
+			<text x="131.00444800000002" y="184" style="font-family: Helvetica; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,368) scale(1,-1)"> signs</text>
+			<rect x="195" y="178" width="66" height="38" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="211.0215" y="205" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,410) scale(1,-1)">Fresh audit</text>
+			<text x="204.156" y="195" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,390) scale(1,-1)">seed c; new signs</text>
+			<text x="228.0" y="187" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,374) scale(1,-1)"></text>
+			<text x="216.039952" y="184" style="font-family: Times-Italic; font-size: 6.5px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,368) scale(1,-1)">m</text>
+			<text x="220.732952" y="182.2" style="font-family: Times-Italic; font-size: 4.536px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,364) scale(1,-1)">A</text>
+			<text x="223.50444800000002" y="184" style="font-family: Helvetica; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,368) scale(1,-1)"> signs</text>
+			<rect x="282" y="178" width="49" height="38" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="283.568" y="205" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,410) scale(1,-1)">Feature refresh</text>
+			<text x="296.33" y="195" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,390) scale(1,-1)">fallback</text>
+			<text x="295.994" y="187" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,374) scale(1,-1)">payload</text>
+			<path d="M 86,197 L 103,197 Z" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="103 197, 98 194.5, 98 199.5" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,35%,52%); fill-rule: evenodd;"/>
+			<rect x="20" y="80" width="67" height="40" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="30.561700000000002" y="109" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,218) scale(1,-1)">Receiver cache</text>
+			<text x="28.821999999999996" y="99" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,198) scale(1,-1)">M cached features</text>
+			<text x="53.5" y="91" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,182) scale(1,-1)"></text>
+			<text x="37.644342" y="86" style="font-family: Times-Italic; font-size: 6.5px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)">C</text>
+			<text x="41.979842000000005" y="84.2" style="font-family: Times-Italic; font-size: 4.536px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,168) scale(1,-1)">R</text>
+			<text x="44.751338000000004" y="86" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)"> = {</text>
+			<text x="53.595338000000005" y="86" style="font-family: Times-BoldItalic; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)">u</text>
+			<text x="57.098138000000006" y="84.2" style="font-family: Times-Italic; font-size: 4.32px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,168) scale(1,-1)">i</text>
+			<text x="58.29909800000001" y="86" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)">}</text>
+			<text x="60.303098000000006" y="84.0" style="font-family: Times-Italic; font-size: 3.96px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,168) scale(1,-1)">i=1</text>
+			<text x="66.056978" y="89.0" style="font-family: Times-Italic; font-size: 3.96px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,178) scale(1,-1)">M</text>
+			<rect x="107" y="80" width="67" height="40" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="116.3395" y="109" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,218) scale(1,-1)">Search and lock</text>
+			<text x="110.155" y="99" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,198) scale(1,-1)">rank received proposal</text>
+			<text x="140.5" y="91" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,182) scale(1,-1)"></text>
+			<text x="121.12196" y="86" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)">fix candidate </text>
+			<text x="156.47396" y="86" style="font-family: Times-Italic; font-size: 6.2px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)">i</text>
+			<text x="158.19756" y="88.3" style="font-family: Helvetica; font-size: 4.32px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,176) scale(1,-1)">*</text>
+			<text x="159.87804" y="86" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)"></text>
+			<rect x="201" y="77" width="72" height="46" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="209.8722" y="112" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,224) scale(1,-1)">Independent audit</text>
+			<text x="208.81799999999998" y="102" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,204) scale(1,-1)">test locked candidate</text>
+			<text x="212.163" y="94" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,188) scale(1,-1)">similarity threshold</text>
+			<text x="216.993" y="86" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,172) scale(1,-1)">1% error target</text>
+			<rect x="279" y="80" width="52" height="40" rx="4" ry="4" style="stroke: rgb(12%,12%,12%); stroke-linecap: butt; stroke-width: 0.75; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="288.72395" y="109" style="font-family: Helvetica-Bold; font-size: 6.3px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,218) scale(1,-1)">Completed</text>
+			<text x="295.661" y="99" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,198) scale(1,-1)">feature</text>
+			<text x="283.826" y="91" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,182) scale(1,-1)">reuse or refresh</text>
+			<path d="M 87,100 L 107,100 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="107 100, 102 97.5, 102 102.5" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,35%); fill-rule: evenodd;"/>
+			<path d="M 135,178 L 135,121 Z" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="135 121, 132.5 126, 137.5 126" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,35%,52%); fill-rule: evenodd;"/>
+			<path d="M 174,102 L 184,102 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<path d="M 184,102 L 184,164 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<path d="M 184,164 L 211,178 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="211 178, 207.712 173.479, 205.4104 177.9178" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,35%); fill-rule: evenodd;"/>
+			<path d="M 236,178 L 236,124 Z" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="236 124, 233.5 129, 238.5 129" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,35%,52%); fill-rule: evenodd;"/>
+			<path d="M 273,100 L 279,100 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="279 100, 274 97.5, 274 102.5" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,35%); fill-rule: evenodd;"/>
+			<path d="M 267,120 L 278,148 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+			<path d="M 278,148 L 306,148 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+			<path d="M 306,148 L 306,178 Z" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9; stroke-dasharray: 3, 2;"/>
+			<polygon points="306 178, 308.5 173, 303.5 173" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 1; fill: rgb(18%,49%,35%); fill-rule: evenodd;"/>
+			<path d="M 306,178 L 306,121 Z" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.9;"/>
+			<polygon points="306 121, 303.5 126, 308.5 126" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(12%,35%,52%); fill-rule: evenodd;"/>
+			<circle cx="135" cy="151" r="6.1" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="133.332" y="148.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(12%,35%,52%); stroke:none;" transform="translate(0,297) scale(1,-1)">1</text>
+			<circle cx="184" cy="151" r="6.1" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="182.332" y="148.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(18%,49%,35%); stroke:none;" transform="translate(0,297) scale(1,-1)">2</text>
+			<circle cx="236" cy="151" r="6.1" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="234.332" y="148.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(12%,35%,52%); stroke:none;" transform="translate(0,297) scale(1,-1)">3</text>
+			<circle cx="279" cy="148" r="6.1" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="277.332" y="145.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(18%,49%,35%); stroke:none;" transform="translate(0,291) scale(1,-1)">4</text>
+			<circle cx="306" cy="151" r="6.1" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="304.332" y="148.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(12%,35%,52%); stroke:none;" transform="translate(0,297) scale(1,-1)">5</text>
+			<rect x="8" y="5" width="329.59999999999997" height="47" rx="4" ry="4" style="stroke: rgb(84%,84%,84%); stroke-linecap: butt; stroke-width: 0.6; fill: rgb(95%,95%,95%); fill-rule: evenodd;"/>
+			<circle cx="16" cy="40.8" r="4.8" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="14.332" y="38.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(12%,35%,52%); stroke:none;" transform="translate(0,77) scale(1,-1)">1</text>
+			<text x="24" y="38.5" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,77) scale(1,-1)">Tx to Rx: proposal sketch</text>
+			<circle cx="127" cy="40.8" r="4.8" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="125.332" y="38.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(18%,49%,35%); stroke:none;" transform="translate(0,77) scale(1,-1)">2</text>
+			<text x="135" y="38.5" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,77) scale(1,-1)">Rx to Tx: locked index</text>
+			<circle cx="239" cy="40.8" r="4.8" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="237.332" y="38.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(12%,35%,52%); stroke:none;" transform="translate(0,77) scale(1,-1)">3</text>
+			<text x="247" y="38.5" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,77) scale(1,-1)">Tx to Rx: fresh audit</text>
+			<circle cx="72" cy="21.8" r="4.8" style="stroke: rgb(18%,49%,35%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="70.332" y="19.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(18%,49%,35%); stroke:none;" transform="translate(0,39) scale(1,-1)">4</text>
+			<text x="80" y="19.5" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,39) scale(1,-1)">Rx to Tx: audit decision</text>
+			<circle cx="211" cy="21.8" r="4.8" style="stroke: rgb(12%,35%,52%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="209.332" y="19.8" style="font-family: Helvetica-Bold; font-size: 6.0px;fill: rgb(12%,35%,52%); stroke:none;" transform="translate(0,39) scale(1,-1)">5</text>
+			<text x="219" y="19.5" style="font-family: Helvetica; font-size: 6.0px;fill: rgb(12%,12%,12%); stroke:none;" transform="translate(0,39) scale(1,-1)">Tx to Rx: feature refresh</text>
+		</g>
+	</g>
+</svg>

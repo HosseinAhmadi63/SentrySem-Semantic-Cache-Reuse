@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "deterministic_implementation": "Canonical fixed-order Cholesky factor is used for sequential three-candidate joint hyperplane draws.",
+  "independent_immediate_rerun": true,
+  "all_numeric_outputs_byte_identical": true,
+  "cross_environment_rerun": {
+    "status": "PASS",
+    "rerun_environment": "Python 3.11 / NumPy 2.2.5",
+    "canonical_environment": "Python 3.12 / NumPy 1.26.4",
+    "seven_numeric_outputs_byte_identical": true,
+    "note": "Environment-bearing experiment_configuration.json is intentionally excluded from the seven numeric outputs."
+  },
+  "checks": {
+    "publication_session_results.csv": "38211c7761bbd1d80c48ae2eafeebcb0208cbccec12aeedda77259aeba59e1d9",
+    "publication_seed_summary.csv": "d10af3cdcef70fc1debcd27c4d9b206c69b2383aee4f0722560da4e65bc54685",
+    "publication_aggregate_summary.csv": "84755a19452ed7cbccf28fce5c5605bba153e71f2477fbe96dfed9dae2ebf4fc",
+    "publication_aggregate_summary.json": "9fb8764fcf412011a016ff6245e2bd1fbe64907a86e5de52a7c353c3e2698c2d",
+    "identity_cluster_bootstrap.csv": "b3c083ace7251b65b436982559c050ac561ac9e1be73874024451e49fc3f225a",
+    "identity_cluster_bootstrap.json": "fe794ab4d6d21c6c9ff547205393d4b806494ac2c34dd0e5a711f56fac398f25",
+    "protocol_validation.json": "be9696d6133b3a9bcab7704fc1326670d9b1c1e3b261dd8000afb1abe76cd2c3",
+    "experiment_configuration.json": "42b896bb693024c10a445021cad17e167d890ef293dbaec43e566295c78111d3"
+  },
+  "scope": "File digests were compared between separate executions using identical frozen inputs and declared seeds; a second independent audit also reproduced all seven numeric outputs across the two stated Python/NumPy environments."
+}

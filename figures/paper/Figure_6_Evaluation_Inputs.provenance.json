@@ -1,0 +1,58 @@
+{
+  "stem": "Figure_6_Evaluation_Inputs",
+  "width_inches": 4.8,
+  "height_inches": 3.7000000000000006,
+  "pdf_pages": 1,
+  "selection_rule": "first frozen evaluation identity in classes 0, 3, and 9",
+  "threshold": 0.7717004776000975,
+  "examples": [
+    {
+      "class_id": 0,
+      "class_name": "airplane",
+      "paired_dataset_index": 21,
+      "novel_dataset_index": 27,
+      "standard_similarity": 0.9327563047409058,
+      "hard_similarity": 0.7841026782989502,
+      "novel_max_similarity": 0.6712877750396729
+    },
+    {
+      "class_id": 3,
+      "class_name": "cat",
+      "paired_dataset_index": 61,
+      "novel_dataset_index": 143,
+      "standard_similarity": 0.8511311411857605,
+      "hard_similarity": 0.6970906257629395,
+      "novel_max_similarity": 0.6486902832984924
+    },
+    {
+      "class_id": 9,
+      "class_name": "truck",
+      "paired_dataset_index": 259,
+      "novel_dataset_index": 538,
+      "standard_similarity": 0.854366660118103,
+      "hard_similarity": 0.5542211532592773,
+      "novel_max_similarity": 0.7226949334144592
+    }
+  ],
+  "data_validation": {
+    "artifact": "qualitative_examples.npz",
+    "sha256": "3a52478f24718985017e6e8e133b6440ee70cb88308c0301b4e9302c9ee26ade"
+  },
+  "files": {
+    "pdf": {
+      "path": "Figure_6_Evaluation_Inputs.pdf",
+      "bytes": 62017,
+      "sha256": "ec02ff5c68006444462873601349989f305b0d2c5d618682f4055c2ffa0c301f"
+    },
+    "svg": {
+      "path": "Figure_6_Evaluation_Inputs.svg",
+      "bytes": 84858,
+      "sha256": "af8fb4659bdfde0ad823420bc6b288cd0f45f3fd1b34627fee9f1cbacc3e73f4"
+    },
+    "png": {
+      "path": "Figure_6_Evaluation_Inputs.png",
+      "bytes": 365855,
+      "sha256": "898263fc41dac3970992015b698451a62b14167ef4822d05e9e7edfa280550f4"
+    }
+  }
+}

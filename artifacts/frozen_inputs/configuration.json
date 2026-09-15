@@ -1,0 +1,56 @@
+{
+  "config": {
+    "seed": 20260907,
+    "local_test": false,
+    "device": "cpu",
+    "bank_per_class": 100,
+    "calibration_per_class": 50,
+    "test_per_class": 50,
+    "embedding_dim": 512,
+    "input_pixels": 128,
+    "verifier": "torchvision ResNet-18 ImageNet-1K V1, frozen",
+    "view_generator": {
+      "reflection_pad": 3,
+      "horizontal_flip_probability": 0.5,
+      "brightness_range": [
+        0.9,
+        1.1
+      ],
+      "contrast_range": [
+        0.9,
+        1.1
+      ],
+      "sensor_noise_sigma": 2.0
+    },
+    "proposal_bits": 64,
+    "long_proposal_bits": 512,
+    "shortlist": 32,
+    "audit_batch_bits": 128,
+    "audit_max_bits": 768,
+    "max_attempts": 3,
+    "total_alpha": 0.01,
+    "bsc_values": [
+      0.0,
+      0.05
+    ],
+    "cache_scenarios": [
+      "full",
+      "evict50",
+      "missing3classes"
+    ],
+    "calibration_tune_precision_target": 0.95,
+    "calibration_precision_target": 0.9,
+    "calibration_min_pairs": 200,
+    "null_trials": 50000,
+    "stress_trials": 10000
+  },
+  "runtime": {
+    "python": "3.12.11 (main, Sep 18 2025, 19:41:45) [Clang 20.1.4 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.6.0",
+    "torchvision": "0.21.0",
+    "numpy": "1.26.4",
+    "device": "cpu",
+    "gpu": null
+  }
+}

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or its experimental artifacts, please cite it using the metadata below."
+type: software
+title: "SentrySem: Reliable Semantic Cache Reuse After Noisy Search"
+version: 1.0.0
+date-released: 2026-09-15
+authors:
+  - family-names: Ahmadi
+    given-names: Hossein
+    orcid: "https://orcid.org/0000-0002-3650-0280"
+  - family-names: Ziar
+    given-names: Zahra
+  - family-names: Kuhestani
+    given-names: Ali
+    orcid: "https://orcid.org/0000-0003-0725-3230"
+abstract: >-
+  Reference implementation and reproducibility artifacts for SentrySem, a
+  semantic communication protocol that separates noisy cache search from an
+  independent finite-sample audit before reusing a receiver-side feature.
+keywords:
+  - semantic communication
+  - semantic caching
+  - post-selection inference
+  - random-hyperplane sketching
+  - reliable cache reuse
+license: MIT
+repository-code: "https://github.com/HosseinAhmadi63/SentrySem-Semantic-Cache-Reuse"

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "tune_status": "PASS",
+  "threshold_cosine": 0.7717004776000975,
+  "threshold_angle_over_pi": 0.2194064622812917,
+  "tune_empirical_precision_target": 0.95,
+  "independent_validation_lower95_target": 0.9,
+  "minimum_selected_pairs": 200,
+  "cal_tune": {
+    "pairs": 500,
+    "selected_pairs": 305,
+    "selected_fraction": 0.61,
+    "identity_precision": 0.9639344262295082,
+    "identity_precision_wilson_lower95": 0.9365834590822176,
+    "same_class_precision": 0.9934426229508196
+  },
+  "cal_validate": {
+    "pairs": 500,
+    "selected_pairs": 288,
+    "selected_fraction": 0.576,
+    "identity_precision": 0.9479166666666666,
+    "identity_precision_wilson_lower95": 0.915855600750118,
+    "same_class_precision": 1.0
+  },
+  "selection_and_validation_identities_disjoint": true,
+  "audit_max_bits_predeclared_before_final_test": 768
+}

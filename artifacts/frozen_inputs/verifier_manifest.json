@@ -1,0 +1,9 @@
+{
+  "tag": "Frozen-ResNet18-ImageNetV1-cosine-v1",
+  "state_dict_sha256": "d7ecbcb063a266bf46ab86ce4e0d141732ba0d286c3fb25a8d55783bda06e41e",
+  "embedding_dim": 512,
+  "pretrained": true,
+  "weights": "ResNet18_Weights.IMAGENET1K_V1",
+  "load_error": null,
+  "trained_in_notebook": false
+}

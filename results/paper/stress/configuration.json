@@ -1,0 +1,54 @@
+{
+  "input_artifact_directory": "inputs",
+  "input_embeddings_sha256": "77173ff70b1fbe318219692771120ade7aa430fc2a0683b82f25a486631d88a0",
+  "input_calibration_sha256": "94aae0e166c7181c87dd3911ae9c44378820e39f70ecc188581ee1ef19720cdb",
+  "selection_sha256": "234bc63c22f9a1bfdefbb0a7204f1ed8956c8ba60c31736529d4f77c5f9dd73b",
+  "script_sha256": "ccb0a9e57cbe34048746580e9fc657dc9422ea0909b5494f10c57c09c99a7a5a",
+  "selected_ratio": [
+    256,
+    768
+  ],
+  "protocol_bits": 1944,
+  "evaluation_protocol_seeds": [
+    13181815969110816250,
+    14673129866313320424,
+    13231421562932395684,
+    5635005200607147554,
+    17148364466832244007
+  ],
+  "conditions": [
+    [
+      "full",
+      "paired_iid"
+    ],
+    [
+      "evict50",
+      "paired_iid"
+    ],
+    [
+      "missing3classes",
+      "paired_iid"
+    ],
+    [
+      "full",
+      "paired_hard_ood"
+    ],
+    [
+      "full",
+      "novel_unpaired"
+    ]
+  ],
+  "cache_sizes": {
+    "full": 1000,
+    "evict50": 500,
+    "missing3classes": 700
+  },
+  "environment": {
+    "python": "3.12.11 (main, Sep 18 2025, 19:41:45) [Clang 20.1.4 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.1"
+  },
+  "traffic_scope": "bidirectional logical framed bits with reliable control and refresh",
+  "semantic_endpoint": "frozen normalized ResNet-18 feature"
+}
