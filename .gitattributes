@@ -10,6 +10,7 @@
 *.npy binary
 *.png binary
 *.pdf binary
+*.pptx binary
 *.svg text eol=lf
 *.jpg binary
 *.jpeg binary

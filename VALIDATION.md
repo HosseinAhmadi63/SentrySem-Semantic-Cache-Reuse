@@ -63,7 +63,8 @@ The validation command confirms:
 - all 50,000 comparator session rows and 22,000 stress session rows are present;
 - each primary query identity has all five protocol-seed realizations required by the cluster bootstrap;
 - the traffic ledger closes for reuse and refresh outcomes; and
-- every manuscript figure file is present and nonempty.
+- every manuscript figure file is present and nonempty; and
+- the curated Figure 1 exports and editable PowerPoint source form a valid publication bundle.
 
 ## Fresh-run comparison
 

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build the seven SentrySem paper figures from authenticated result records."""
+"""Assemble the seven SentrySem paper figures from reviewed assets and result records."""
 
 from __future__ import annotations
 
 import hashlib
 import json
 import math
+import shutil
 from collections.abc import Callable, Sequence
 from pathlib import Path
 
@@ -289,15 +290,6 @@ def math_m_sub_runs(subscript: str, suffix: str = "", size: float = FS_MIN, colo
     ]
 
 
-def math_i_star_runs(prefix: str = "", suffix: str = "", size: float = FS_MIN, color=DARK):
-    return [
-        (prefix, FONT, size, 0, color),
-        ("i", "Times-Italic", size + 0.2, 0, color),
-        ("*", FONT, size * 0.72, 2.3, color),
-        (suffix, FONT, size, 0, color),
-    ]
-
-
 def marker(
     d: Drawing,
     x: float,
@@ -451,183 +443,6 @@ def add_polyline(d: Drawing, xs: Sequence[float], ys: Sequence[float], color, da
     if dashed:
         path.strokeDashArray = [4, 2]
     d.add(path)
-
-
-def arrow(d: Drawing, x1: float, y1: float, x2: float, y2: float, color=DARK, dashed=False) -> None:
-    dash = [3, 2] if dashed else None
-    d.add(Line(x1, y1, x2, y2, strokeColor=color, strokeWidth=0.9, strokeDashArray=dash))
-    angle = math.atan2(y2 - y1, x2 - x1)
-    length = 5.0
-    spread = 2.5
-    bx = x2 - length * math.cos(angle)
-    by = y2 - length * math.sin(angle)
-    px = spread * math.sin(angle)
-    py = -spread * math.cos(angle)
-    d.add(
-        Polygon(
-            [x2, y2, bx + px, by + py, bx - px, by - py],
-            fillColor=color,
-            strokeColor=color,
-        )
-    )
-
-
-def poly_arrow(d: Drawing, points: Sequence[tuple[float, float]], color=DARK, dashed=False) -> None:
-    for p1, p2 in zip(points[:-2], points[1:-1], strict=False):
-        d.add(
-            Line(
-                p1[0],
-                p1[1],
-                p2[0],
-                p2[1],
-                strokeColor=color,
-                strokeWidth=0.9,
-                strokeDashArray=[3, 2] if dashed else None,
-            )
-        )
-    arrow(d, *points[-2], *points[-1], color=color, dashed=dashed)
-
-
-def box(
-    d: Drawing,
-    x: float,
-    y: float,
-    w: float,
-    h: float,
-    title: str,
-    lines: Sequence[str],
-    fill=WHITE,
-    stroke=DARK,
-) -> None:
-    d.add(Rect(x, y, w, h, rx=4, ry=4, fillColor=fill, strokeColor=stroke, strokeWidth=0.75))
-    txt(d, x + w / 2, y + h - 11, title, FS_SMALL, True, anchor="middle")
-    for index, line in enumerate(lines):
-        txt(d, x + w / 2, y + h - 21 - 8 * index, line, FS_MIN, anchor="middle")
-
-
-def figure_1_system() -> Drawing:
-    d = Drawing(FIG_W, 3.72 * 72)
-    h = d.height
-
-    txt(d, 272, h - 12, "protocol time", FS_SMALL, anchor="end", color=MID)
-    arrow(d, 278, h - 10, 336, h - 10, color=MID)
-
-    # Two horizontal swimlanes convey ownership without a central divider.
-    d.add(
-        Rect(
-            8,
-            159,
-            FIG_W - 16,
-            82,
-            rx=7,
-            ry=7,
-            fillColor=PALE_BLUE,
-            strokeColor=BLUE,
-            strokeWidth=0.8,
-        )
-    )
-    d.add(
-        Rect(
-            8,
-            61,
-            FIG_W - 16,
-            82,
-            rx=7,
-            ry=7,
-            fillColor=PALE_GREEN,
-            strokeColor=GREEN,
-            strokeWidth=0.8,
-        )
-    )
-    txt(d, 16, 228, "TRANSMITTER (Tx)", FS_PANEL, True, color=BLUE)
-    txt(d, 16, 130, "RECEIVER (Rx)", FS_PANEL, True, color=GREEN)
-
-    box(d, 20, 178, 66, 38, "Semantic encoder", ["source x", ""], WHITE)
-    math_runs(
-        d,
-        53,
-        184,
-        [
-            ("normalized ", FONT, FS_MIN, 0, DARK),
-            ("u", "Times-BoldItalic", FS_SMALL, 0, DARK),
-            ("(x)", "Times-Italic", FS_SMALL, 0, DARK),
-        ],
-        anchor="middle",
-    )
-    box(d, 103, 178, 65, 38, "Proposal sketch", ["random signs", ""], WHITE)
-    math_runs(d, 135.5, 184, math_m_sub_runs("P", " signs", FS_SMALL), anchor="middle")
-    box(d, 195, 178, 66, 38, "Fresh audit", ["seed c; new signs", ""], WHITE)
-    math_runs(d, 228, 184, math_m_sub_runs("A", " signs", FS_SMALL), anchor="middle")
-    box(d, 282, 178, 49, 38, "Feature refresh", ["fallback", "payload"], WHITE)
-    arrow(d, 86, 197, 103, 197, color=BLUE)
-
-    box(d, 20, 80, 67, 40, "Receiver cache", ["M cached features", ""], WHITE)
-    math_runs(
-        d,
-        53.5,
-        86,
-        [
-            ("C", "Times-Italic", FS_SMALL + 0.2, 0, DARK),
-            ("R", "Times-Italic", FS_SMALL * 0.72, -1.8, DARK),
-            (" = {", FONT, FS_MIN, 0, DARK),
-            ("u", "Times-BoldItalic", FS_SMALL, 0, DARK),
-            ("i", "Times-Italic", FS_MIN * 0.72, -1.8, DARK),
-            ("}", FONT, FS_MIN, 0, DARK),
-            ("i=1", "Times-Italic", FS_MIN * 0.66, -2.0, DARK),
-            ("M", "Times-Italic", FS_MIN * 0.66, 3.0, DARK),
-        ],
-        anchor="middle",
-    )
-    box(d, 107, 80, 67, 40, "Search and lock", ["rank received proposal", ""], WHITE)
-    math_runs(d, 140.5, 86, math_i_star_runs("fix candidate ", "", FS_MIN), anchor="middle")
-    box(
-        d,
-        201,
-        77,
-        72,
-        46,
-        "Independent audit",
-        ["test locked candidate", "similarity threshold", "1% error target"],
-        WHITE,
-    )
-    box(d, 279, 80, 52, 40, "Completed", ["feature", "reuse or refresh"], WHITE)
-    arrow(d, 87, 100, 107, 100, color=GREEN)
-
-    # Numbering keeps the communication band free of long, overlapping labels.
-    arrow(d, 135, 178, 135, 121, color=BLUE)  # 1 proposal
-    poly_arrow(d, [(174, 102), (184, 102), (184, 164), (211, 178)], color=GREEN)  # 2 lock
-    arrow(d, 236, 178, 236, 124, color=BLUE)  # 3 fresh audit
-    arrow(d, 273, 100, 279, 100, color=GREEN)  # local certified reuse
-    poly_arrow(
-        d, [(267, 120), (278, 148), (306, 148), (306, 178)], color=GREEN, dashed=True
-    )  # 4 decision
-    arrow(d, 306, 178, 306, 121, color=BLUE)  # 5 refresh
-
-    for number, x, y, color in [
-        (1, 135, 151, BLUE),
-        (2, 184, 151, GREEN),
-        (3, 236, 151, BLUE),
-        (4, 279, 148, GREEN),
-        (5, 306, 151, BLUE),
-    ]:
-        d.add(Circle(x, y, 6.1, fillColor=WHITE, strokeColor=color, strokeWidth=1.0))
-        txt(d, x, y - 2.2, str(number), FS_MIN, True, anchor="middle", color=color)
-
-    d.add(
-        Rect(8, 5, FIG_W - 16, 47, rx=4, ry=4, fillColor=LIGHT, strokeColor=GRID, strokeWidth=0.6)
-    )
-    key = [
-        (1, "Tx to Rx: proposal sketch", 16, 39, BLUE),
-        (2, "Rx to Tx: locked index", 127, 39, GREEN),
-        (3, "Tx to Rx: fresh audit", 239, 39, BLUE),
-        (4, "Rx to Tx: audit decision", 72, 20, GREEN),
-        (5, "Tx to Rx: feature refresh", 211, 20, BLUE),
-    ]
-    for number, label, x, y, color in key:
-        d.add(Circle(x, y + 1.8, 4.8, fillColor=WHITE, strokeColor=color, strokeWidth=0.9))
-        txt(d, x, y - 0.2, str(number), FS_MIN, True, anchor="middle", color=color)
-        txt(d, x + 8, y - 0.5, label, FS_MIN)
-    return d
 
 
 def _wilson(count: int, n: int) -> tuple[float, float]:
@@ -1263,6 +1078,51 @@ def save_figure(drawing: Drawing, stem: str) -> dict:
     }
 
 
+def copy_curated_figure(stem: str) -> dict:
+    """Copy a publication-authored conceptual figure into the generated set."""
+
+    source_dir = REPOSITORY_ROOT / "figures" / "paper"
+    if OUT.resolve() == source_dir.resolve():
+        raise ValueError("Generated figures must not overwrite figures/paper")
+    OUT.mkdir(parents=True, exist_ok=True)
+    files: dict[str, dict[str, str | int]] = {}
+    for suffix in ("pdf", "svg", "png"):
+        source = source_dir / f"{stem}.{suffix}"
+        destination = OUT / source.name
+        if not source.is_file() or source.stat().st_size <= 1_000:
+            raise FileNotFoundError(f"Missing curated figure asset: {source}")
+        shutil.copyfile(source, destination)
+        files[suffix] = {
+            "path": destination.relative_to(OUT).as_posix(),
+            "bytes": destination.stat().st_size,
+            "sha256": sha256(destination),
+        }
+
+    pdf = OUT / f"{stem}.pdf"
+    png = OUT / f"{stem}.png"
+    reader = PdfReader(str(pdf))
+    if len(reader.pages) != 1:
+        raise AssertionError(f"Curated figure must be a single-page PDF: {stem}")
+    page = reader.pages[0]
+    width_points = float(page.cropbox.width)
+    height_points = float(page.cropbox.height)
+    with Image.open(png) as image:
+        pixels = list(image.size)
+        dpi = image.info.get("dpi")
+    if pixels[0] not in range(2878, 2883):
+        raise AssertionError((stem, pixels))
+    return {
+        "stem": stem,
+        "source_mode": "curated conceptual figure",
+        "width_inches": 4.8,
+        "height_inches": 4.8 * height_points / width_points,
+        "pdf_pages": 1,
+        "png_pixels": pixels,
+        "png_reported_dpi": list(dpi) if dpi else None,
+        "files": files,
+    }
+
+
 def provenance_source(path: Path) -> str:
     """Return an accurate, portable label for a configured figure source."""
 
@@ -1285,6 +1145,13 @@ def provenance_source(path: Path) -> str:
 
 def write_companions(outputs: list[dict], validation: dict) -> None:
     sources = [
+        {
+            "figure": 1,
+            "source": "figures/paper/Figure_1_System_Model.pptx",
+            "sha256": sha256(REPOSITORY_ROOT / "figures" / "paper" / "Figure_1_System_Model.pptx"),
+            "records": "editable conceptual system model and protocol sequence",
+            "metrics": [],
+        },
         {
             "figure": 2,
             "source": provenance_source(VALIDATION_DIR / "selection_stress.json"),
@@ -1390,7 +1257,7 @@ def write_companions(outputs: list[dict], validation: dict) -> None:
 
     captions = r"""# SentrySem figure captions
 
-**Fig. 1. SentrySem protocol and message directions.** The transmitter maps source instance $x$ to normalized semantic representation $\mathbf u(x)$ and sends a proposal sketch containing $m_P$ signs. The receiver searches its cache $\mathcal C_R=\{\mathbf u_i\}_{i=1}^{M}$, locks candidate index $i^\star$, and returns the lock record to the transmitter. Only after receiving that record, the transmitter generates fresh audit seed $c$ and sends an independent audit sketch containing $m_A$ signs. The receiver tests the locked candidate against semantic threshold $\tau$ under familywise error budget $\alpha$ and returns its decision. Certification sets the completed feature $\widehat{\mathbf u}=\mathbf u_{i^\star}$; on fallback, the transmitter sends the current feature representation. Numbered arrows give the five over-the-air message directions; blue denotes transmitter-to-receiver communication, green denotes receiver-to-transmitter communication or receiver-local transitions, and the dashed green arrow carries the receiver decision.
+**Fig. 1. SentrySem protocol and message directions.** The transmitter maps source instance $x$ to normalized semantic representation $\mathbf u(x)$ and sends a proposal sketch containing $m_P$ signs. The receiver searches its cache $\mathcal C_R=\{\mathbf u_i\}_{i=1}^{M}$, locks candidate index $i^\star$, and returns the lock record to the transmitter. Only after receiving that record, the transmitter generates fresh audit seed $c$ and sends an independent audit sketch containing $m_A$ signs. The receiver tests the locked candidate against semantic threshold $\tau$ under familywise error budget $\alpha$ and returns its decision. Certification sets the completed feature $\widehat{\mathbf u}=\mathbf u_{i^\star}$; on fallback, the transmitter sends the current feature representation. Numbered arrows give the five logical message directions; arrow 3 groups the consecutive audit-seed and audit-sign frames. Blue denotes transmitter-to-receiver communication, green denotes receiver-to-transmitter communication or receiver-local transitions, and the dashed green arrow carries the receiver decision.
 
 **Fig. 2. Effect of post-selection reuse and validation of independent auditing.** (a) False acceptance after searching 1, 8, or 64 cache candidates with the same 64-sign sketch used either for both selection and acceptance or only for selection followed by a fresh independent audit. The inset magnifies the 0--1% region of the same false-acceptance scale and labels the three fresh-audit rates. Each point represents 10,000 boundary-null trials; whiskers are Wilson 95% intervals. (b) Familywise false acceptance of the sequential fresh-audit protocol over 50,000 sessions per channel condition; the blue and orange whiskers show the corresponding Wilson 95% intervals. The horizontal line in each panel marks the prespecified 1% error target.
 
@@ -1416,15 +1283,15 @@ def generate_all_figures(
     configure_paths(results_root, output_dir, frozen_inputs, validation_dir)
     OUT.mkdir(parents=True, exist_ok=True)
     validation = validate_sources()
+    outputs = [copy_curated_figure("Figure_1_System_Model")]
     figures = [
-        ("Figure_1_System_Model", figure_1_system()),
         ("Figure_2_Statistical_Validation", figure_2_statistical_validation()),
         ("Figure_3_Search_Audit_Allocation", figure_3_allocation()),
         ("Figure_4_Primary_Performance", figure_4_primary()),
         ("Figure_5_Protected_Method_Tradeoff", figure_5_tradeoff()),
         ("Figure_7_Cache_Query_Stress", figure_6_stress()),
     ]
-    outputs = [save_figure(drawing, stem) for stem, drawing in figures]
+    outputs.extend(save_figure(drawing, stem) for stem, drawing in figures)
     from sentrysem.figures.qualitative import generate_qualitative_figure
 
     outputs.append(generate_qualitative_figure(FROZEN_INPUTS, OUT))

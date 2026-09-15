@@ -13,3 +13,5 @@ All notable changes to the reference implementation are documented in this file.
 - Added partial-cache, missing-class, strong-view, and novel-source stress evaluations.
 - Added source-identity cluster bootstrap intervals and logical traffic accounting.
 - Added all manuscript figures, immutable paper results, frozen inputs, validation checks, tests, and PyCharm run configurations.
+- Added the reviewed editable Figure 1 source and synchronized PDF, PNG, and SVG exports.
+- Made CSV serialization use repository-stable LF line endings on every supported operating system.

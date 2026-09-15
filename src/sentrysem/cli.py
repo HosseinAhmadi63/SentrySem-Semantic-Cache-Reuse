@@ -270,7 +270,7 @@ def build_parser() -> argparse.ArgumentParser:
     reproduce.add_argument("--overwrite", action="store_true")
     reproduce.set_defaults(handler=command_reproduce)
 
-    figures = subparsers.add_parser("figures", help="regenerate all seven paper figures")
+    figures = subparsers.add_parser("figures", help="assemble all seven paper figures")
     figures.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     figures.add_argument("--results", type=Path)
     figures.add_argument("--inputs", type=Path)

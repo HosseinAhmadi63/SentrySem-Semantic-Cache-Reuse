@@ -1,4 +1,4 @@
-"""Regenerate all seven manuscript figures from the committed records."""
+"""Assemble all seven manuscript figures from the committed assets and records."""
 
 from __future__ import annotations
 

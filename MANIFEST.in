@@ -20,4 +20,4 @@ recursive-include scripts *.py
 recursive-include tests *.py
 recursive-include artifacts/frozen_inputs *.json *.npz
 recursive-include results/paper *.json *.csv
-recursive-include figures/paper *.pdf *.png *.svg *.json
+recursive-include figures/paper *.pdf *.png *.pptx *.svg *.json

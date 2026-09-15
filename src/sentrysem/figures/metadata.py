@@ -47,11 +47,19 @@ def set_pdf_metadata(path: Path, title: str) -> None:
 
 
 def set_svg_metadata(path: Path, title: str) -> None:
-    """Replace ReportLab's generic SVG title and description."""
+    """Set descriptive SVG title and description elements."""
 
     path = Path(path)
     content = path.read_text(encoding="utf-8")
     description = f"Vector figure for the SentrySem paper: {title}."
-    content = re.sub(r"<title>.*?</title>", f"<title>{escape(title)}</title>", content, count=1)
-    content = re.sub(r"<desc>.*?</desc>", f"<desc>{escape(description)}</desc>", content, count=1)
+    title_element = f"<title>{escape(title)}</title>"
+    description_element = f"<desc>{escape(description)}</desc>"
+    if "<title>" in content:
+        content = re.sub(r"<title>.*?</title>", title_element, content, count=1)
+    else:
+        content = re.sub(r"(<svg\b[^>]*>)", rf"\1\n{title_element}", content, count=1)
+    if "<desc>" in content:
+        content = re.sub(r"<desc>.*?</desc>", description_element, content, count=1)
+    else:
+        content = content.replace(title_element, f"{title_element}\n{description_element}", 1)
     path.write_text(content, encoding="utf-8")

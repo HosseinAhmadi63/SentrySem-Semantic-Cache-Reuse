@@ -623,7 +623,11 @@ def write_csv(path: Path, rows: Iterable[dict]):
     if not rows:
         raise ValueError("cannot write an empty CSV")
     with path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=list(rows[0].keys()),
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 

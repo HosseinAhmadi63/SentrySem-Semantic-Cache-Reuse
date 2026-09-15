@@ -34,7 +34,7 @@ SentrySem-Semantic-Cache-Reuse/
 ├── configs/                 Paper and fast-check configurations
 ├── docs/                    Reproduction and result documentation
 ├── figures/
-│   ├── paper/               Figures used in the manuscript
+│   ├── paper/               Manuscript figures and editable Figure 1 source
 │   └── generated/           Figures created by local runs
 ├── results/
 │   ├── paper/               Immutable reference results
@@ -121,11 +121,13 @@ results/generated/reproduction_manifest.json
 
 Fresh figures are written to `figures/generated/`. The immutable reference files under `results/paper/` and `figures/paper/` remain unchanged.
 
-To rebuild only the figures from the checked-in paper results:
+To assemble a fresh figure set from the checked-in paper results:
 
 ```bash
 python main.py figures
 ```
+
+Figure 1 is a conceptual system diagram rather than a data plot. Its reviewed PDF, PNG, and SVG exports are copied unchanged to `figures/generated/`; the editable PowerPoint source is `figures/paper/Figure_1_System_Model.pptx`. Figures 2--7 are regenerated from the frozen numerical and image records.
 
 ## Run a fast end-to-end check
 
@@ -157,7 +159,7 @@ The checked-in frozen inputs remain available for direct comparison. The referen
 
 ## Protocol sequence
 
-One session contains five pre-refresh transmitted frames:
+The five numbered arrows in Figure 1 show logical message directions. Arrow 3 groups the two consecutive transmitter-to-receiver audit frames. The serialized pre-refresh transaction therefore contains five frames:
 
 1. the transmitter sends the proposal signs;
 2. the receiver sends a candidate-lock record after its local cache search;
@@ -165,7 +167,7 @@ One session contains five pre-refresh transmitted frames:
 4. the transmitter sends the audit signs; and
 5. the receiver sends the reuse-or-refresh decision.
 
-The cache search is receiver-local computation rather than a transmitted frame. When the decision is refresh, the transmitter sends one additional feature-refresh frame containing the current quantized semantic feature.
+The cache search is receiver-local computation rather than a transmitted frame. When the decision is refresh, the transmitter sends one additional feature-refresh frame containing the current quantized semantic feature; this conditional transmission is arrow 5 in Figure 1.
 
 ## Reference configuration
 

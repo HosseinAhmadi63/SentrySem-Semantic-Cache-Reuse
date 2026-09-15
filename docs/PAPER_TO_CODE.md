@@ -4,7 +4,7 @@ This document connects each scientific component of the paper to its executable 
 
 ## Operational system model
 
-SentrySem uses five pre-refresh transmitted frames: proposal signs, candidate-lock record, audit seed, audit signs, and receiver decision. The nearest-candidate search is performed locally at the receiver between the first and second frames. A refresh decision adds one feature frame carrying the current quantized feature.
+SentrySem uses five pre-refresh transmitted frames: proposal signs, candidate-lock record, audit seed, audit signs, and receiver decision. The nearest-candidate search is performed locally at the receiver between the first and second frames. A refresh decision adds one feature frame carrying the current quantized feature. Figure 1 groups the consecutive audit-seed and audit-sign frames under its third logical message-direction arrow.
 
 The protocol implementation is installed from `src/sentrysem/` and exercised through `main.py`. The traffic constants and the selected proposal-audit allocation are declared in `configs/paper.json`.
 
@@ -23,7 +23,7 @@ The protocol implementation is installed from `src/sentrysem/` and exercised thr
 | `src/sentrysem/experiments/allocation.py` | CAL-TUNE proposal-audit allocation study and frozen selection |
 | `src/sentrysem/experiments/comparators.py` | Common-seed method comparison, aggregation, and identity-cluster bootstrap |
 | `src/sentrysem/experiments/stress.py` | Partial-cache, missing-class, strong-view, and novel-source evaluation |
-| `src/sentrysem/figures/paper.py` | Quantitative manuscript figure construction |
+| `src/sentrysem/figures/paper.py` | Curated Figure 1 assembly and quantitative manuscript figure construction |
 | `src/sentrysem/figures/qualitative.py` | Representative cached, repeated, strong-shift, and novel-source image panel |
 
 ## Frozen semantic representation
@@ -97,7 +97,7 @@ Run:
 python main.py figures
 ```
 
-The figure builder reads `results/paper/` by default and writes a fresh set to `figures/generated/`. The manuscript versions remain under `figures/paper/`. Numerical labels, thresholds, and confidence intervals are read from the result records; panel layout and visual styling are fixed by the figure builder.
+The figure builder reads `results/paper/` by default and writes a fresh set to `figures/generated/`. The manuscript versions remain under `figures/paper/`. Figure 1 is the reviewed conceptual system diagram: its PDF, PNG, and SVG are copied byte-for-byte, and `figures/paper/Figure_1_System_Model.pptx` is its editable source. Figures 2--7 are rebuilt from the frozen result records; their numerical labels, thresholds, and confidence intervals are read from those records.
 
 ## End-to-end execution
 

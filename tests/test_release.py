@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import xml.etree.ElementTree as ET
+import zipfile
 
 from pypdf import PdfReader
 
+from sentrysem.figures import paper
 from sentrysem.validation import verify_repository
 
 
@@ -30,6 +32,27 @@ def test_paper_figure_metadata_is_publication_ready(repository_root) -> None:
         svg = pdf_path.with_suffix(".svg").read_text(encoding="utf-8")
         assert "<title>...</title>" not in svg
         assert "SentrySem" in svg
+
+
+def test_curated_system_figure_bundle_and_copy(repository_root, tmp_path, monkeypatch) -> None:
+    stem = "Figure_1_System_Model"
+    source = repository_root / "figures" / "paper"
+    for suffix in ("pdf", "png", "svg", "pptx"):
+        path = source / f"{stem}.{suffix}"
+        assert path.is_file()
+        assert path.stat().st_size > 1_000
+    with zipfile.ZipFile(source / f"{stem}.pptx") as archive:
+        assert "[Content_Types].xml" in archive.namelist()
+        assert "ppt/slides/slide1.xml" in archive.namelist()
+
+    monkeypatch.setattr(paper, "OUT", tmp_path)
+    result = paper.copy_curated_figure(stem)
+    assert result["source_mode"] == "curated conceptual figure"
+    for suffix in ("pdf", "png", "svg"):
+        assert (tmp_path / f"{stem}.{suffix}").read_bytes() == (
+            source / f"{stem}.{suffix}"
+        ).read_bytes()
+    assert not (tmp_path / f"{stem}.pptx").exists()
 
 
 def test_pycharm_run_configurations_are_complete(repository_root) -> None:

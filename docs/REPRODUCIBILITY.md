@@ -11,7 +11,7 @@ python main.py verify
 python main.py reproduce --config configs/paper.json --overwrite
 ```
 
-The command leaves `artifacts/frozen_inputs/`, `results/paper/`, and `figures/paper/` unchanged. New outputs are written to `results/generated/` and `figures/generated/`.
+The command leaves `artifacts/frozen_inputs/`, `results/paper/`, and `figures/paper/` unchanged. New outputs are written to `results/generated/` and `figures/generated/`. The reviewed conceptual Figure 1 exports are copied unchanged into the generated figure set, while Figures 2--7 are rebuilt from frozen records.
 
 ### Raw-image reproduction
 

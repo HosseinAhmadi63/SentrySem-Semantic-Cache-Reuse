@@ -95,7 +95,7 @@ def write_csv(path: str | Path, rows: Iterable[Mapping[str, Any]]) -> None:
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
     with destination.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=columns)
+        writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
         writer.writeheader()
         writer.writerows(materialized)
 
